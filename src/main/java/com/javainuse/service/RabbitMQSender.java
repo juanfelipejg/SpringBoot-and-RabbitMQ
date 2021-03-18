@@ -20,6 +20,7 @@ public class RabbitMQSender {
     private String routingkey;
 
     public void send(Employee company) {
+        //Envia mensaje a RabbitMQ
         rabbitTemplate.convertAndSend(exchange, routingkey, company);
         System.out.println("Send msg = " + company);
 
